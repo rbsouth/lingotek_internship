@@ -46,9 +46,12 @@
 				// I went ahead and ran $ php index.php in the terminal to get an idea of where the data is and how to access it
 				// var_export will give a stringified version of the variables value
 				echo var_export($response["data"][0]["likes"]["count"]); // this will give us access to the number of liked on my most recent post
+				echo " <a href=";
 				echo var_export($response["data"][0]["link"]); // this returns the link of the most recent post
-				// Here we end the paragraph tag
-				echo '</p>';
+				echo ">"; 
+				echo "Link to the post";
+				echo "</a>";
+				echo '</p>';// Here we end the paragraph tag
 			 ?>
 		</div>
 	</body>
