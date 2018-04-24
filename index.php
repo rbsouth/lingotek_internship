@@ -6,7 +6,7 @@
 		<title>Lingotek Internship</title>
 	</head>
 	<body>
-		<!-- all references will be in readme -->
+		<!-- all references located in readme -->
 		<!-- use php directly in html using <?php ?> -->
 		<?php 
 
@@ -28,11 +28,14 @@
 			  ),
 			));
 
+			// Execute the given cURL session above
 			$response = curl_exec($curl);
+			// Returns a clear text error message for the last cURL operation
 			$err = curl_error($curl);
-
+			// Close a cURL session
 			curl_close($curl);
 
+			// json_decode takes up to 4 arguments, in this case we give the API response as the first argument and set the second argument, "assoc" to true, this will return objects as accotiative arrays, making them easier to access.
 			$response = json_decode($response, true);
 			echo $response['data']['link'];
 		 ?>
